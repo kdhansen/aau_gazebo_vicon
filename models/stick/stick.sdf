@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="stick">
+    <pose>0 0 0.5 0 0 0</pose>
+    <link name="stick_link">
+      <gravity>false</gravity>
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>1.0</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.0</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.5 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.02 0.5 0.02</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <plugin name="ros_transform" filename="libros_transform.so">
+      <targetLink>stick_link</targetLink>
+      <transformTopic>/vicon/TestStick/TestStick</transformTopic>
+    </plugin>
+
+  </model>
+</sdf>

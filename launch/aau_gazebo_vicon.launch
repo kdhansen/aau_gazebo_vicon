@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find aau_gazebo_vicon)/worlds/uas_lab.world"/>
+    </include>
+</launch>
